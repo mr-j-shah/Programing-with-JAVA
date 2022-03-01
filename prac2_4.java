@@ -1,11 +1,11 @@
 class Matrix{
     int row,colum;
-    float[][] mat = new float[5][5];
+    float[][] mat = new float [5][5];
 
     Matrix(int a[][]){
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a.length; j++) {
-                this.mat[i][j]=a[i][j];
+                mat[i][j]=a[i][j];
             }
         }
     }
@@ -23,22 +23,26 @@ class Matrix{
             System.out.print("\n");
         }
     }
-    float[][] transpose(){
-        float ans[][] = new float[5][5];
-        for (int i = 0; i < ans.length; i++) {
-            for (int j = 0; j < ans.length; j++) {
-                mat[i][j]=ans[j][i];
+    float [][] transpose(){
+        float[][] a = new float [5][5];
+        a=mat;
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; i < a.length; i++) {
+                mat[j][i]=a[i][j];
             }
         }
-        return ans;
+        return mat;
     }
 }
 
 class prac2_4{
     public static void main(String args[])
     {
-        int arr[][]={ {1,2,3} , {4,5,6} };
+        int arr[][]={ {1,2,3} , {4,5,6},{7,8,9}};
         Matrix a = new Matrix(arr);
+        a.readMaatrix();
+        a.mat=a.transpose();
+        System.out.println("next");
         a.readMaatrix();
     }
 }
