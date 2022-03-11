@@ -15,8 +15,6 @@ class Javatpoint {
     public void setValue(int i) {
         this.i = i;
     }
-
-    @Override
     public String toString() {
         return Integer.toString(i);
     }
